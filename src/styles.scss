@@ -8,6 +8,7 @@ html, body {
 body { 
     margin: 0; 
     font-family: Roboto, "Helvetica Neue", sans-serif; 
+    color: white;
 }
 
 .main-header {
@@ -22,7 +23,7 @@ body {
 }
 
 .main-container {
-    text-align: center;
+    margin: 1rem;
 }
 
 
