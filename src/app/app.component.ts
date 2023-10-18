@@ -11,6 +11,7 @@ export class AppComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
+    // We call a service that gets us data.
     this.title = 'Filter customers';
   }
 }
