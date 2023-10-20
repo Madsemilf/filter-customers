@@ -1,0 +1,25 @@
+
+  .table {
+    background-color: #333; /* Set the background color of the table */
+    color: white; /* Text color on the table */
+    border-collapse: collapse; /* To remove cell spacing */
+    width: 100%; /* Optional, adjust as needed */
+  }
+
+  .table-hover tr:hover {
+    background-color: #222; /* Darker background on hover */
+  }
+
+  .table th {
+    background-color: #222; /* Dark gray background for header cells */
+  }
+
+  .table th,
+  .table td {
+    padding: 30px; /* Adjust padding as needed */
+    border: 1px solid white; /* Add borders around cells */
+  }
+
+  .table .no-customers {
+    background-color: #444; /* Dark gray background for the message cell */
+  }
