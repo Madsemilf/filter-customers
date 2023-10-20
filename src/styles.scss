@@ -2,7 +2,9 @@
 
 html, body { 
     height: 100%; 
+    max-width: 1600px;
     background-color: #424242;
+    margin: auto;
 }
 
 body { 
@@ -26,7 +28,16 @@ body {
     margin: 1rem;
 }
 
+// section {
+//     height: auto;
+
+//     .main-container {
+//         height: auto;
+//     }
+// }
 
 
 
-  
+
+
+
