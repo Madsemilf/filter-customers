@@ -8,6 +8,11 @@ import { Component, OnInit } from '@angular/core';
 export class CustomersComponent implements OnInit {
   title: string = '';
   people: any[] = [];
+  isVisible = true;
+
+  changeVisibility() {
+    this.isVisible = !this.isVisible;
+  }
 
   constructor() {}
 
