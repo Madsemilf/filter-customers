@@ -9,9 +9,17 @@ import { ICustomer } from '../shared/interfaces';
 })
 export class CustomersListComponent implements OnInit {
   filteredCustomers: ICustomer[] = [];
-  customersOrderTotal: number | undefined;
+  customersOrderTotal: number = 0;
   currencyCode: string = 'USD';
+
   constructor() {}
 
   ngOnInit(): void {}
+
+  calculateOrders() {
+    this.customersOrderTotal = 0;
+    this.filteredCustomers.forEach((cust: ICustomer) => {
+      this.customersOrderTotal += cust.orderTotal ?? 0;
+    });
+  }
 }
