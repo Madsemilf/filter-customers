@@ -52,5 +52,7 @@ export class CustomersComponent implements OnInit {
         customerSince: new Date(2002, 10, 31),
       },
     ];
+    // Log the number of people to the console
+    console.log('Number of People:', this.people.length);
   }
 }
