@@ -46,19 +46,3 @@ export class SorterService {
     }, obj || self);
   }
 }
-
-const sorter = new SorterService();
-
-const data = [
-  { name: 'John', age: 30 },
-  { name: 'Alice', age: 25 },
-  { name: 'Bob', age: 35 },
-];
-
-// Sort data by name in ascending order
-sorter.sort(data, 'name');
-console.log(data);
-
-// Sort data by age in descending order
-sorter.sort(data, 'age');
-console.log(data);
