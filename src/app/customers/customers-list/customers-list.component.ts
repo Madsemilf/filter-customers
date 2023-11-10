@@ -34,7 +34,8 @@ export class CustomersListComponent implements OnInit {
       this.customersOrderTotal += customer.orderTotal ?? 0;
     });
 
-    // this.customersOrderTotal = +this.customersOrderTotal.toFixed(2);
+    // Log the customersOrderTotal to the console
+    console.log('Customers Order Total:', this.customersOrderTotal);
   }
 
   filter(data: string) {
