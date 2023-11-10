@@ -66,10 +66,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "filter-customers:build:production"
+              "buildTarget": "filter-customers:build:production"
             },
             "development": {
-              "browserTarget": "filter-customers:build:development"
+              "buildTarget": "filter-customers:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -77,7 +77,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "filter-customers:build"
+            "buildTarget": "filter-customers:build"
           }
         },
         "test": {
