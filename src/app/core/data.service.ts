@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { map, catchError, throwError, Observable, of } from 'rxjs';
+import { map, filter, catchError, throwError, Observable, of } from 'rxjs';
 
 import { ICustomer, IOrder } from '../customers/shared/interfaces';
 
@@ -17,22 +17,14 @@ export class DataService {
       .pipe(catchError(this.handleError));
   }
 
-  // getCustomer(id: number): Observable<ICustomer> {
-  //   return this.http.get<ICustomer[]>(this.baseUrl + 'customers.json').pipe(
-  //     map((customers) => {
-  //       let customer = customers.find((cust: ICustomer) => cust.id === id);
-  //       return customer || null;
-  //     }),
-  //     catchError(this.handleError),
-  //     switchMap((customer) => {
-  //       if (customer) {
-  //         return of(customer);
-  //       } else {
-  //         return of(null); // Return an empty observable if no customer is found
-  //       }
-  //     })
-  //   );
-  // }
+  getCustomer(id: number): Observable<ICustomer> {
+    return this.http.get<ICustomer[]>(this.baseUrl + 'customers.json').pipe(
+      map((customers) => customers.filter((customer) => customer.id === id)),
+      filter((filteredCustomers) => filteredCustomers.length > 0), // Ensure there is at least one matching customer
+      map((filteredCustomers) => filteredCustomers[0]), // Take the first matching customer
+      catchError(this.handleError)
+    );
+  }
 
   getOrders(id: number): Observable<IOrder[]> {
     return this.http.get<IOrder[]>(this.baseUrl + 'orders.json').pipe(
