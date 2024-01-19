@@ -50,7 +50,7 @@ export class DataService {
     console.error('server error:', error);
     if (error.error instanceof Error) {
       const errMessage = error.error.message;
-      return throwError(errMessage);
+      return throwError(() => new Error());
       // Use the following instead if using lite-server
       // return throwError(err.text() || 'backend server error');
     }
