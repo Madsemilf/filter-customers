@@ -7,16 +7,21 @@ import { AppMaterialModule } from '../app-material.module';
 import { CustomersComponent } from './customers.component';
 import { CustomersListComponent } from './customers-list/customers-list.component';
 import { FilterTextboxComponent } from './customers-list/filter-textbox.component';
-import { SorterService } from '../core/sorter.service';
+import { CustomersRoutingModule } from './customers-routing.module';
 
 @NgModule({
-  imports: [CommonModule, AppMaterialModule, SharedModule, FormsModule],
+  imports: [
+    CommonModule,
+    AppMaterialModule,
+    SharedModule,
+    FormsModule,
+    CustomersRoutingModule,
+  ],
   declarations: [
     CustomersComponent,
     CustomersListComponent,
     FilterTextboxComponent,
   ],
-  providers: [SorterService],
   exports: [CustomersComponent],
 })
 export class CustomersModule {}

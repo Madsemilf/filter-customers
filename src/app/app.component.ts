@@ -3,7 +3,7 @@ import { AppMaterialModule } from './app-material.module';
 
 @Component({
   selector: 'app-root',
-  template: ` <app-customers></app-customers> `,
+  template: ` <router-outlet></router-outlet> `,
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
